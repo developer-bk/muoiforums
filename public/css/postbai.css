@@ -22,9 +22,9 @@ html {
     margin-right: auto;
     margin-left: auto;
 }
-.row {
-    margin-right: -15px;
-    margin-left: -15px;
+.main {
+    margin-right: 15px;
+    margin-left: 15px;
 }
 .title{
     position: relative;
@@ -168,4 +168,92 @@ button{
 }
 button {
     align-items: flex-start;
+}
+.chu {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+/* Dropdown Button */
+.dropbtn {
+    
+}
+ 
+/* ĐỔi màu nền khi hover và focus Dropdown button */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: white;
+}
+ 
+/* Định dạng các thẻ bao bọc các menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+ 
+/* Dropdown Content, mặc định sẽ được ẩn đi */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+ 
+/* Định dạng các thẻ a là các menu con */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+ 
+/* Thay đổi màu nền khi các menu con được hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+ 
+/* Hiển thị menu, ta sẽ dùng javascript để thêm class này vào các nôi dung cần được hiển thị */
+.show {display:block;}
+.dropdown-menu {
+    display: block;
+    overflow: hidden;
+    width: 240px;
+    min-height: 100px;
+    background: #FFF;
+    border-radius: 5px;
+    border: 1px solid #DDD;
+    bottom: 40px;
+    z-index: 99;
+   
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 10px rgba(0,0,0,0.05);
+}
+.dropdown-menu .dropdown-search {
+    margin-right: 65px;
+    position: relative;
+}
+.dropdown-menu .dropdown-search .icon {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+.dropdown-menu .list-item {
+    overflow: auto;
+    max-height: 160px;
+    padding: 10px 0;
+}
+.list-unstyled {
+    list-style: none;
+}
+ul, menu, dir {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.dropdown-menu .dropdown-search .input {
+    border: 0;
+    padding: 10px 20px 10px 45px;
+    width: 100%;
+    border-bottom: 1px solid #EDEDED;
 }

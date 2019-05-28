@@ -1,4 +1,6 @@
-@extends('header')
+@if(Auth::check())
+    @extends('logined.headerLogined')
+@endif
 
 @section('main')
 <!DOCTYPE html>

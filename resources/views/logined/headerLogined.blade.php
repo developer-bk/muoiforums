@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="headerLG.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/headerLG.css')}}"/>
         <meta charset="utf-8"/>
         <title>
             <img src="" alt=""> Muoi
@@ -11,10 +11,12 @@
     <div class="Header">
         <div class="top">
             <div class="Logo">
+                <a href="">
                 <img src="icon.png" height="50" width="50">
                 <ul>
                     <li>MUOIROOM</li>
                 </ul>
+                <a>
              </div>
             <div class="search">
                 <img src="" >
@@ -24,7 +26,7 @@
             </div>
             <div class="l-r">
                 <ul class="Post">
-                        <li><a href="">Viết bài</a></li> 
+                        <li><a href="/muoiroom/public/viet-bai">Viết bài</a></li> 
                 </ul>
                 <img class="avatar" src="a.png.png" height="50" width="50">
                 <button class="dropbtn">Thông tin</button>
@@ -33,8 +35,8 @@
                         <a href="">Tin nhắn</a> 
                         <a href="">Bài viết của bạn</a> 
                         <a href="">Lịch sử bình luận</a> 
-                        <a href="">Cài đặt tài khoản</a> 
-                        <a href="">Đăng xuất</a> 
+                        <a href="{{route('cai-dat')}}">Cài đặt tài khoản</a> 
+                        <a href="{{asset('logout')}}">Đăng xuất</a> 
                 </div>
             </div>
         <div class="bot">
@@ -67,3 +69,7 @@
     </div>
     </body>
 </html>
+
+@yield('main')
+@yield('post')
+@yield('baiviet')

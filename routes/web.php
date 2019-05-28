@@ -33,13 +33,19 @@ Route::get("loginedddd/header", function(){
 }) ->name('headerlg');
 
 
-Route::get('/', 'MyController@index'); 
+Route::get('/', 'MyController@index')->name('home'); 
 //Viet bai
 Route::get('viet-bai', function () {
     return view('post');
 })->name('viet-bai');
 Route::post('viet-bai','PostController@post');
 
+
+//logout
+Route::get('logout','AuthController@logout')->name('logout');
+
+//ài đặt tài khoản 
+Route::get('setting','SettingController@setting')->name('cai-dat');
 
 Route::get('hello', function() {
     return 'heeloooo';

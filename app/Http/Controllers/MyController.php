@@ -11,6 +11,7 @@ use App\box;
 use DB;
 use App\Quotation;
 use View;
+use Session;
 
 class MyController extends Controller
 {
@@ -78,6 +79,12 @@ class MyController extends Controller
    
     public function index()
     {
+        if (Session::has('user'))
+        {
+            echo Session::get('user');
+        }
+           
+        
         
             $post=DB::table('post')
                 ->join('users', 'post.user_created_id','=','users.id')

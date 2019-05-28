@@ -11,9 +11,11 @@
         
         <form action="{{route('logined')}}" method="POST">
         {{ csrf_field() }} 
+        <a href="{{route('home')}}"><img src="https://img.icons8.com/wired/2x/search.png" alt="" height="50px" height="50px"> </a>
                        <h1>Login</h1> 
+                       @include('error.note')
                        <div class="notifications" id="successMessage">{{ Session::get('success') }}</div>
-                        <input placeholder="Username" type="text" required="" name="username">
+                        <input placeholder="Username" type="text" required="" name="username" value="{{old('username')}}">
                         <input placeholder="Password" type="password" required="" name="password">
                         <a href="" >
                             <button type="submit">Login</button>

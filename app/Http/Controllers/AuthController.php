@@ -7,6 +7,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use App\Quotation;
 use View;
+use Session;
 
 class AuthController extends Controller
 {
@@ -16,11 +17,22 @@ class AuthController extends Controller
         $password = $request['password'];
 
         if (Auth::attempt(['username'=>$username,'password'=>$password]))
-        return redirect()->action('MyController@index');
+        {
+            $user=Auth::user();
+            Session::put('user',$user);
+            return redirect()->action('MyController@index');
+           
+        }
+        
             else {
-                return View("login");
+                return back()->withInput()->with('error','Tài khoản hoặc mất khẩu chưa đúng');
             }
-               
-            
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        Session::forget('user');
+        return redirect()->action('MyController@index');
     }
 }
