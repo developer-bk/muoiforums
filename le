@@ -1,0 +1,152 @@
+<html lang="vi">
+<head>
+  <title>Trang cá nhân</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+<style>
+
+</style>
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css">
+</head>
+<body>
+<div style="background-color: white">
+    <!-- Chỗ này để ảnh bìa
+    <div height="20%" width=device-width>
+        <img src="Picture\thiên_nhiên_2.jpg" class="mx-auto d-block" width: 100%; height: 30% ;  alt="Ảnh bìa">     
+    </div>
+    -->
+    <div class="coverImage" >
+        <img src="Picture\sao-hoa.jpg" class="mx-auto d-block" style="width:1200px ; height:300px; padding: 5px"    alt="Ảnh bìa">     
+    </div>
+    
+    <div class="container  " >
+        <div class="row" height=300px  width=1200px style="padding: 10px; padding-top: 10px">
+            <!--Chỗ này là ảnh đại diện-->
+            <div class="avatarUser" style="width: 140px; height: 140px">
+                <img src="Picture\thiên_nhiên_2.jpg"  style="width:120 ; height:120 ;" alt="Ảnh đại diện">
+            </div>
+            <div class="text info">
+                <div>
+                    <div class="userName">Tên user </div>
+                    <div class="userDescription">
+                        Những điều thú vị đang đợi bạn. Chia sẻ những điều bạn quan tâm thôi nào!
+                    </div>
+                    <nav  class="nav userCount ">
+                        <p class="nav-link" ><!-- hàm đếm số người theo dõi-->Người theo dõi </p>
+                        <p class="nav-link"><!-- hàm đếm số người đang theo dõi-->Đang theo dõi </p>
+                        <p class="nav-link"><!-- hàm đếm số bạn bè-->Bạn bè </p>
+                    </nav>
+                </div>
+            </div>
+            <div class="action" id="btnAction">
+                    <a href="Edit.html" target="_self"> Chỉnh sửa </a>
+            </div> 
+        </div>
+    </div> 
+        <!-- Thanh menu -->
+    <div class="showTab " style="border: 1px solid #CDCDCD;" >
+        <ul class="nav nav-tabs nav-fill nav-pills justyfi-content-center ">
+            <li class="nav-item">
+                    <a class="nav-link" id="Post-tab" data-toggle="tab" href="#Post">
+                        <span class="showTab" ><!-- Thêm hàm truy vấn đếm số bài viết-->Bài viết </span></a>
+            </li>            
+            <li class="nav-item">
+                <a class="nav-link" id="Comments-tab"  data-toggle="tab" href="#Comments"><!-- Thêm hàm truy vấn đếm-->Bình luận</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="SavedPost-tab" data-toggle="tab" href="#SavedPost"><!-- Thêm hàm truy vấn đếm-->Bài viết đã lưu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="Requests-tab" data-toggle="tab" href="#Requests"><!-- Thêm hàm truy vấn đếm-->Yêu cầu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="Followers-tab" data-toggle="tab" href="#Followers"><!-- Thêm hàm truy vấn đếm-->Người theo dõi</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="Followings-tab" data-toggle="tab" href="#Followings"><!-- Thêm hàm truy vấn đếm-->Đang theo dõi</a>
+            </li>
+
+        </ul>
+
+
+        <!-- Nội dung các tab trên menu-->
+        <div class="tab-content showTab">
+            <div class="tab-pane fade show active" id="Post">
+                <!-- Nội dung các bài viết ở đây-->
+                <p>
+                    Nội dung Bài viết
+                </p>
+                
+                    <div class="container ">
+                            <div class="row" height=100px  width=1200px style="padding: 5px;" >
+                                <!--Chỗ này là ảnh đại diện-->
+                                <div class="avatarUser">
+                                    <img src="Picture\thiên_nhiên_2.jpg" alt="Ảnh đại diện">
+                                </div>
+                                <div >
+                                    <div class="infoPost">
+                                        trong <a href="www.test" > link thể loại bài viết <!-- Hiện thể loại của bài viết--></a>
+                                    </div>
+                                    <nav  class="nav timePost"> 
+                                            <p class="nav-link" >đăng lúc <!--Thời gian đăng--> trước</p>
+                                            <p class="nav-link" >đọc lúc <!--Thời gian đọc gần nhất--> trước</p>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!--Tên bài viết-->
+                            <div class="row contentPost" height=50px >
+                                <a href="Post.html"> <b>Tên bài viết</b></a> <br>
+                            </div>
+                            <!--Xem trước nội dung bài viết-->
+                            <div class="row contentPost" height=300px>
+                                <p>Đây là nội dung bài viết</p>
+                            </div>
+                            <div class="row contentPost" height=50px >
+                                <!-- Các button like, dislike, comment, save-->
+                            </div>
+                    </div>
+
+            </div>
+            <div class="tab-pane fade" id="Comments">
+                <!-- Nội dung-->
+                <p>
+                    Comments
+                </p>
+            </div>
+            <div class="tab-pane fade" id="SavedPost">
+                <!-- Nội dung-->
+                <p>
+                        Bài đã lưu
+                </p>
+            </div>
+            <div class="tab-pane fade" id="Requests">
+                <!-- Nội dung-->
+
+            </div>
+            <div class="tab-pane fade" id="Followers">
+                <!-- Nội dung-->
+
+            </div>
+            <div class="tab-pane fade" id="Followings">
+                <!-- Nội dung-->
+                    <p>
+                        Danh sách người đang theo dõi
+                    </p>
+                <img src="Picture\thiên_nhiên_2.jpg" width="1200px">
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <!--<div class="showContent">
+        <iframe class="iframe" src="Post.html" name="iframe_post" sandbox="allow-forms allow-scripts">
+        </iframe>
+</div>-->
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
