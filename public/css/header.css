@@ -1,0 +1,108 @@
+.header {
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+.top{
+    width: 90%;
+}
+.Logo {
+    width: 20%;
+    float: left;
+    height: 65px;
+    margin-left: 5%;
+    padding: 0px;
+    border-bottom: 2px solid black;
+}
+.Logo img{
+    float: left;
+}
+.Logo ul li{
+    text-align: left;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:#1a66a8;
+float: left;
+list-style: none;
+}
+.search {
+    width: 40%;
+    height: 65px;
+    float: left;
+    padding: 0;
+    border-bottom: 2px solid black;
+}
+
+.l-r{
+    width: 35%;
+    height: 65px;
+    float: left;
+    border-bottom: 2px solid black;
+}
+.search input{
+    float: left;
+    border: none;
+}
+.l-r .dn{
+    margin: 0px;
+    padding: 0px;
+}
+.l-r .Post{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+.l-r .Post li{
+list-style: none;
+float: left;
+border-radius: 20px;
+background: #1a66a8;
+}
+.l-r .Post li a{
+    text-decoration: none;
+    display: block;
+    line-height: 40px;
+    color: white;
+    width: 100px;
+    text-align: center;
+    padding-top: 5px;
+}
+.l-r .dn li {
+    float: left;
+    list-style: none;
+    text-indent: 20px;
+
+}
+.l-r .dn li a {
+    text-decoration: none;
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    color: #1a66a8;
+}
+.bot{
+    width: 100%;
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+    clear: left;
+    border-bottom: 2px solid black;
+}
+.menubot{
+    margin: 0px;
+    padding: 0px;
+}
+.menubot ul{
+    margin: 0px;
+    padding: 0px;
+}
+.menubot ul li{
+    float: left;
+    list-style: none;
+    text-indent: 40px;
+}
+.menubot ul li a{
+    text-decoration: none;
+    display: block;
+    line-height: 50px;
+    text-align: center;
+}
