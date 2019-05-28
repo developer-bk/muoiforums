@@ -1,0 +1,129 @@
+*{margin: 0; padding: 0}
+body{
+    width: 1200px;
+    margin:0 auto;
+    text-align: center;
+    overflow: auto;
+    background-color: rgb(185, 183, 183);
+    border: 1px solid #CDCDCD;
+}
+h3{ color:dodgerblue; 
+    text-align: center;
+    padding: 10px;
+}
+
+/* Định dạng ảnh bìa */
+.coverImage{
+    height: 300px; 
+    width:1200px;
+    padding: 0px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.coverImage img{
+    padding-bottom: 50px;
+}
+/* ảnh đại diện*/
+.avatarUser{
+    width: 100px;
+    height: 100px;
+}
+.avatarUser img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 5px;
+}
+/* Định dạng text thông tin trên trang cá nhân bên cạnh ảnh đại diện*/
+.info{
+    font-size: 20px;
+    width:880px; 
+
+    padding: 5px; 
+    padding-top: 20px;
+    text-align: left;
+}
+
+.userName{
+
+}
+/* nút chỉnh sửa thông tin*/
+.action{
+    float: left;
+    width: 100px;
+    padding-left:  10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 40px;
+}
+#btnAction a{
+    width: 120px;
+    background-color:white;
+    color: dodgerblue;
+    border-color: dodgerblue;
+    border-style: solid;
+    border-width: 2px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 32px;
+    font-size: 18px;  
+}
+
+#btnAction  button button > a{
+    font-size: 20px;
+    
+}
+.userCount p{
+    margin-left: -15px;
+    padding-right: 70px;
+    color: gray;
+}
+/* thanh menu tab trên trang cá nhân*/
+.listMenuUser{
+    height: 50px; 
+    width: 1200px;
+    float: left;
+    background-color: white;
+    padding: 10px;
+}
+.listMenuUser a{
+    color: dodgerblue;
+    font-size: 18px;
+    text-decoration: line;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+.showTab{
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    background-color: white;
+}
+/*thông tin bài đăng */
+.infoPost{
+    padding-top: 5px;
+    font-size: 15px;
+    color: black;
+}
+.infoPost a{
+    font-size: 15px;
+    color: blueviolet;
+}
+.timePost p{
+    font-size: 12px;
+    color: gray;
+    padding-right: 50px;
+}
+.contentPost a{
+    font-size: 25px;
+    color:violet;
+    padding-top: -10px;
+}
+.contentPost p{
+    font-size: 18px;
+    color:black;
+    padding: 5px;
+    float: left;
+}
