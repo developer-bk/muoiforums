@@ -1,5 +1,1 @@
-@extends('login');
-
-@section('forgotPassword')
-    <button>hihihi</button>
-@endsection
+<p>hihihi</p>

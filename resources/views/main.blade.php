@@ -76,11 +76,11 @@
                                         </a>
                                     </div>
                                     <div class="col-md-9">
-                                    <a href="{{route('bai-viet')}}">
+                                    <a href="{{route('bai-viettt',$po->id_post)}}">
                                         <h3 class="">{{$po->subject}}</h3>
                                         </a>
                                         <p> {{$po->short_content}}</p>
-                                        <a class="btn btn-primary" href="">Xem chi tiết</a>
+                                        <a class="btn btn-primary" href="{{route('bai-viettt',$po->id_post)}}">Xem chi tiết</a>
                                     </div>
                                 </div>
                             <div class="break"></div>

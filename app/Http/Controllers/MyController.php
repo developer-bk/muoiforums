@@ -68,7 +68,7 @@ class MyController extends Controller
 
     public function passData($name)
     {
-        return view('test',['name'=>$name]);
+        return $name;
     }
 
     public function route($link)
@@ -96,7 +96,9 @@ class MyController extends Controller
                     'users.avatar',
                     'box.id_box',
                     'box.name_box')
-                ->get();
+                    ->orderBy('post.updated_at','desc')
+                    ->paginate(10)  ;
+                
             return View::make('main',compact('post'));
         
     }

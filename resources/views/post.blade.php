@@ -25,7 +25,7 @@
     <div class="main">
         <div class="form-group" >
             <label>Tags</label>
-            <input class="form-control" name="txtTag" placeholder="Chọn tag hoặc tìm kiếm" />
+            <input id="abc" value="" class="form-control" name="txtTag" placeholder="Chọn tag hoặc tìm kiếm" />
         </div>       
         <div class="form-group" >Chọn tối đa <b>5</b> tag để câu chuyện của bạn dễ dàng đến với mọi người hơn</div>
                 </div>
@@ -46,7 +46,7 @@
         border: 1px solid black;
         border-radius: 4px;
         "
-        >Chọn thể loại</button>
+        >Danh mục</button>
             <div id="tag" class="dropdown-content">
                 <div class="dropdown-menu">
                     <div class="dropdown-search">
@@ -55,9 +55,9 @@
                         </div>
                         <input autocomplete="off" class="input untouched pristine valid" formcontrolname="keyword" id="category-search" name="keyword" placeholder="Tìm danh mục" type="text">
                     </div>
-                    <ul class="list-item list-unstyled">
+                    <ul id="cate" class="list-item list-unstyled">
                         <!----><li>
-                            <a>Quan điểm - Tranh luận</a>
+                            <a >Quan điểm - Tranh luận</a>
                         </li><li>
                             <a>Truyền cảm hứng</a>
                         </li><li>
@@ -101,10 +101,11 @@
         <div class="container-fluid">
             <div class="main">
             <div class="container" style="padding-bottom:120px">
-                        <form action="" method="POST">
+                        <form action="{{route('viet-bai')}}" method="POST">
+                        {{ csrf_field() }} 
                             <div class="form-group">
                                 <label>Tiêu đề</label>
-                                <input class="form-control" name="txtName" placeholder="Tiêu đề bài viết" />
+                                <input class="form-control" name="title" placeholder="Tiêu đề bài viết" />
                             </div>
                             
                             <textarea id="editor1" name="editor1" cols="80" rows="10">
@@ -114,23 +115,21 @@
                           <script>
                                     CKEDITOR.replace('editor1');
                         </script> 
+                        <br>
                               <div class="form-group">
                                 <label>Images</label>
                                 <a href=https://2.pik.vn target="_blank">
                                 <button type="button" >adasda</button>
                                 </a>
                             </div>
-                            <div class="form-group">
-                                <label>Tag: Nhập hoặc tìm kiếm tag</label>
-                                <input class="form-control" name="txtTag" Placeholder="nhập thể loại">
-                            </div>
+                            
                             <button type="submit" class="btn btn-default">Đăng bài</button>
                             <button type="reset" class="btn btn-default">Reset</button>
-                        <form>
+                        </form>
                     </div>
                 </div>
-                <!-- /.row -->
-            </div>
+                 <!-- /.row -->
+                 </div>
             <!-- /.container-fluid -->
         </div>
         <!-- /#page-wrapper -->
@@ -170,6 +169,7 @@
                  }
             });
         </script>
+       
 </body>
 
 </html>

@@ -23,9 +23,7 @@ Route::post('logined','AuthController@login')->name('logined');
 //
 
 //chi tiet bai viet
-Route::get('bai-viet',function(){
-    return view('baiviet');
-})->name('bai-viet');
+Route::get('bai-viet/{id_post}','PostDetailController@detail')->name('bai-viettt');
 
 
 Route::get("loginedddd/header", function(){
