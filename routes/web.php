@@ -155,3 +155,24 @@ Route::get('model/user/all',function(){
     return $user;
 });
 
+Route::get('delete-member/user/{id}','AdminController@deleteMember');
+
+
+Route::get('admin','AdminController@getAdmin');
+
+Route::get('members','AdminController@getMember');
+
+Route::get('qlpost','AdminController@getPosts');
+
+Route::get('qlcmt','AdminController@getCMT');
+
+Route::get('delete-comment/comment/{id}','AdminController@deleteCMT');
+
+
+Route::get('delete-post/post/{id}','AdminController@deletePost');
+
+Route::get('edit-post/post/{id}','AdminController@editPost');
+
+Route::post('update-post/{id}','AdminController@postEditPost');
+
+
