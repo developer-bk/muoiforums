@@ -1,9 +1,8 @@
-@if(Auth::check())
-    @extends('logined.headerLogined')
-@endif
+  @extends('header')
 
-@section('main')
+
 <!DOCTYPE html>
+@section('main')
 <html lang="en">
 
 <head>
@@ -77,9 +76,9 @@
                                     </div>
                                     <div class="col-md-9">
                                     <a href="{{route('bai-viettt',$po->id_post)}}">
-                                        <h3 class="">{{$po->subject}}</h3>
+                                        <h3 class="">{!!$po->subject!!}</h3>
                                         </a>
-                                        <p> {{$po->short_content}}</p>
+                                        <p> {!!$po->short_content!!}</p>
                                         <a class="btn btn-primary" href="{{route('bai-viettt',$po->id_post)}}">Xem chi tiết</a>
                                     </div>
                                 </div>
@@ -126,7 +125,6 @@
 </div>
 
 </body>
-
+@endsection('main')
 </html>
 
-@endsection('main')

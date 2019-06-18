@@ -23,7 +23,7 @@ Route::post('logined','AuthController@login')->name('logined');
 //
 
 //chi tiet bai viet
-Route::get('bai-viet/{id_post}','PostDetailController@detail')->name('bai-viettt');
+Route::get('bai-viet/{id_post}','MyController@postDetail')->name('bai-viettt');
 
 
 Route::get("loginedddd/header", function(){
@@ -33,17 +33,23 @@ Route::get("loginedddd/header", function(){
 
 Route::get('/', 'MyController@index')->name('home'); 
 //Viet bai
-Route::get('viet-bai', function () {
-    return view('post');
-})->name('viet-bai');
+Route::get('viet-bai', 'PostController@getPost')->name('viet-bai');
 Route::post('viet-bai','PostController@post');
 
 
 //logout
 Route::get('logout','AuthController@logout')->name('logout');
 
+//COmment
+Route::post('comment/{id_post}','CommentController@postComment')->name('comment');
+
+
 //ài đặt tài khoản 
-Route::get('setting','SettingController@setting')->name('cai-dat');
+Route::get('cai-dat/{username}','SettingController@getSetting')->name('cai-dat');
+Route::post('cai-dat','SettingController@postSetting')->name('cai-datt');
+
+//Tim-kiem
+Route::post('tim-kiem','MyController@search')->name('tim-kiem');
 
 Route::get('hello', function() {
     return 'heeloooo';

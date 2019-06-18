@@ -27,11 +27,11 @@
             </div>
             <div class="l-r">
                 <ul class="Post">
-                        <li><a href="/muoiroom/public/viet-bai">Viết bài</a></li> 
+                        <li><a href="{{route('viet-bai')}}">Viết bài</a></li> 
                 </ul>
                     <ul class="dn">                   
-                            <li><a href="register">Đăng ký</a></li>
-                            <li><a href="login">Đăng nhập</a></li>
+                            <li><a href="{{route('register')}}">Đăng ký</a></li>
+                            <li><a href="{{route('login')}}">Đăng nhập</a></li>
             </ul>  
             </div>
         </div>

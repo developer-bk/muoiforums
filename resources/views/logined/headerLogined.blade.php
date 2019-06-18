@@ -10,37 +10,39 @@
     <body>
     <div class="Header">
         <div class="top">
-            <div class="Logo">
-                <a href="">
+            <div class="Logo" >
+                <a href="{{route('home')}}">
                 <img src="icon.png" height="50" width="50">
                 <ul>
                     <li>MUOIROOM</li>
                 </ul>
-                <a>
+                </a>
              </div>
             <div class="search">
-                <img src="" >
-                <form novalidate="" class="searchform" >
-                        <input class="input-searchform" formControlName="keyword" name="keyword" placeholder="Tìm kiếm" type="text" value="">
+                <img src="https://img.icons8.com/ios/2x/search.png" width="30px" height="30px" style="float: left;margin-top: 10px ">
+                <form novalidate="" class="search-form" style="float: left" action="{{route('tim-kiem')}}" method="POST">
+                {{ csrf_field() }} 
+                        <input class="input-searchform" formControlName="keyword" name="search" placeholder="Tìm kiếm" type="text" value=""  style="">
+                        <button style="margin-top: 10px;margin-left:5px; height:35px; width: 80px; background-color:white;  " >Tìm Kiếm</button>
                 </form>
             </div>
             <div class="l-r">
                 <ul class="Post">
-                        <li><a href="/muoiroom/public/viet-bai">Viết bài</a></li> 
+                        <li><a href="{{route('viet-bai')}}">Viết bài</a></li> 
                 </ul>
-                <img class="avatar" src="a.png.png" height="50" width="50">
-                <button class="dropbtn">Thông tin</button>
-                <div class="dropdown-content">
+                <img class="avatar" src= "{{ Session::get('user')->avatar}}"  height="50" width="50" style="border-radius:50%">
+                <button onclick="myFunction()" class="dropbtn">{{Session::get('user')->username}}<span><img src="" height="10px" width="10px"></span></button>
+                <div id="myDropdown" class="dropdown-content">
                         <a href="">Trang cá nhân</a> 
                         <a href="">Tin nhắn</a> 
                         <a href="">Bài viết của bạn</a> 
                         <a href="">Lịch sử bình luận</a> 
-                        <a href="{{route('cai-dat')}}">Cài đặt tài khoản</a> 
-                        <a href="{{asset('logout')}}">Đăng xuất</a> 
+                        <a href="{{route('cai-dat',Session::get('user')->username)}}">Cài đặt tài khoản</a> 
+                        <a href="{{route('logout')}}">Đăng xuất</a> 
                 </div>
             </div>
         <div class="bot">
-            <div class="menubot">
+            <div class="menu-bot">
                     <ul>
                         <li>                                    
                             <a  href="">Cho bạn</a>
@@ -67,9 +69,32 @@
             </div>
         </div>
     </div>
+    </div>
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
     </body>
+@yield('mainLg')
+@yield('postLg')
+@yield('baivietLg')
+@yield('setting')
 </html>
 
-@yield('main')
-@yield('post')
-@yield('baiviet')

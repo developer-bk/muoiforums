@@ -1,6 +1,7 @@
-.header {
+.Header {
     width: 100%;
-    border-bottom: 2px solid black;
+    height: 120px;
+    border-bottom: 1px solid #DDD;
 }
 .top{
     width: 90%;
@@ -11,7 +12,7 @@
     height: 65px;
     margin-left: 5%;
     padding: 0px;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid #DDD;
 }
 .Logo img{
     float: left;
@@ -29,19 +30,26 @@ list-style: none;
     height: 65px;
     float: left;
     padding: 0;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid #DDD;
 }
 
 .l-r{
     width: 35%;
     height: 65px;
     float: left;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid #DDD;
     overflow: hidden;
 }
 .search input{
     float: left;
-    border: none;
+}
+.search .input-searchform{
+    float: left;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px; 
+    margin-top:10px; 
+    border: solid 1px gray;
 }
 .l-r .Post{
     margin: 0px;
@@ -82,22 +90,21 @@ background: #1a66a8;
     margin: 0px;
     padding: 0px;
     clear: left;
-    border-bottom: 2px solid black;
 }
-.menubot{
+.menu-bot{
     margin: 0px;
     padding: 0px;
 }
-.menubot ul{
+.menu-bot ul{
     margin: 0px;
     padding: 0px;
 }
-.menubot ul li{
+.menu-bot ul li{
     float: left;
     list-style: none;
     text-indent: 40px;
 }
-.menubot ul li a{
+.menu-bot ul li a{
     text-decoration: none;
     display: block;
     line-height: 50px;
@@ -108,7 +115,6 @@ background: #1a66a8;
   font-size: 16px;  
   border: none;
   outline: none;
-  color: red;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -116,12 +122,7 @@ background: #1a66a8;
   border-radius: 20px;
   
 }
-.l-r:hover .dropdown-content {
-    display: block;
-}
-.l-r .dropdown:hover .dropbtn {
-    background-color: red;
-  }
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -139,16 +140,14 @@ background: #1a66a8;
     text-decoration: none;
     display: block;
     text-align: left;
-}
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-.l-r:hover .dropdown-content {
-    display: block;
 }    
 .l-r .avatar{
     float: left;
     margin-left: 100px;
+    border-radius: 50%;
+}
+.show{
+    display: block;
 }
   
 

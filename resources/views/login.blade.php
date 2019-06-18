@@ -24,7 +24,7 @@
                             <a href="" margin-left="20px" class="link">Forgot username</a> . <a href="" class="link">Forgot Password</a>
                             </div>
                         <br>
-                        <p class="notifications">New to Forums <a href="/muoiRoom/public/register" class="link">Sign up</a></p>
+                        <p class="notifications">New to Forums <a href="{{route('register')}}" class="link">Sign up</a></p>
                         <!-- <button onclick="location.href='{{url('/register')}}'" type="button">Register</button> -->
                             
         </form>

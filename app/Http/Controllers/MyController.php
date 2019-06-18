@@ -12,28 +12,14 @@ use DB;
 use App\Quotation;
 use View;
 use Session;
+use Illuminate\Support\Facades\Auth;
 
 class MyController extends Controller
 {
-    public function xinchao()
-    {
-        echo "Heeloooooo";
-    }
+  
 
-    public function myURL(Request $request)
-    {
-        return $request -> url();
-    }
+   
 
-    public function getForms()
-    {
-        return view('form');
-    }
-
-    public function postForms(Request $request)
-    {
-        echo $request->hoten;
-    }
 
     public function setCookie()
     {
@@ -81,7 +67,7 @@ class MyController extends Controller
     {
         if (Session::has('user'))
         {
-            echo Session::get('user');
+            // echo Session::get('user');
         }
            
         
@@ -99,9 +85,69 @@ class MyController extends Controller
                     ->orderBy('post.updated_at','desc')
                     ->paginate(10)  ;
                 
-            return View::make('main',compact('post'));
+                    if (Session::has('user')) {
+                        return View::make('logined.mainLg',compact('post'));
+                    } else {
+                        return View::make('main',compact('post'));
+                    }
         
     }
 
+    public function postDetail(Request $request)
+    {
+        $id_post=$request['id_post'];
+        $post= DB::table('post')
+        ->where('id_post','=',$id_post)
+        ->join('users','post.user_created_id','=','users.id')
+        ->join('box','post.box_id','=','box.id_box')
+        ->select(
+            'post.*',
+            'users.id',
+            'users.username',
+            'users.avatar',
+            'box.id_box',
+            'box.name_box'
+        )
+        ->get();
+
+        $comment = DB::table('comment')
+        ->where('post_id','=',$id_post)
+        ->join('users','comment.user_id','=','users.id')
+        ->select(
+            'comment.*',
+            'users.*'
+        )
+        ->get();
+        if (Session::has('user')) {
+            return View::make('logined.baivietLg',compact('post','comment'));
+        } else {
+            return View::make('baiviet',compact('post','comment'));
+        }
+    }
+
+    public function search(Request $request) 
+    {
+        $keyword = $request['search'];
+        $post = DB::table('post')
+        ->where('subject','like',"%{$keyword}%")
+        ->orWhere('content','like',"%{$keyword}%")
+        ->join('users', 'post.user_created_id','=','users.id')
+        ->join('box','post.box_id','=','box.id_box')
+        ->select(
+            'post.*',
+            'users.id',
+            'users.username',
+            'users.avatar',
+            'box.id_box',
+            'box.name_box')
+        ->orderBy('post.created_at','desc')
+        ->get();
+        if (Session::has('user')) {
+            return View::make('logined.mainLg',compact('post'));
+
+        } else {
+            return View::make('main',compact('post'));
+        }
+    }
     
 }

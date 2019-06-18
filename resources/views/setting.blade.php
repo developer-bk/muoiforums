@@ -1,4 +1,7 @@
+@extends('logined.headerLogined')
+
 <!DOCTYPE html>
+@section('setting')
 <html lang="en">
 
 <head>
@@ -11,6 +14,7 @@
 </head>
 <body>
     <div class="container">    
+        
     <div id="setting">
         <div class="post-container" >
             <div class="account-setting" >
@@ -32,7 +36,7 @@
                         <div class="form-cell form-cell-fluid">
                             <div class="avatar-section">
                                 <form enctype="multipart/form-data" method="post" novalidate="" class="untouched pristine valid">
-                                    <!----><img class="avatar" src="https://s3-ap-southeast-1.amazonaws.com/img.spiderum.com/sp-xs-avatar/bbb2110070ed11e9a9bf39a183ca3215.jpg">
+                                    <!----><img class="avatar" src="{{Session::get('user')->avatar}}">
                                     <label class="avatar-upload">
                                         <span class="icon">
                                             <svg height="40" viewBox="0 0 1000 1000" width="40" x="0px" y="0px">
@@ -69,7 +73,7 @@
                                 <span class="form-icon">
                                     <img src="https://img.icons8.com/ios/2x/secured-letter.png" height="20px" width="20px" alt="">
                                 </span>
-                                <input class="form-control form-email" disabled="disabled" type="email">
+                                <p class="form-control form-email" disabled="disabled" type="email">{{Session::get('user')->email}}</p>
                             </div>
     
     
@@ -129,7 +133,7 @@
                                 <label class="form-label">Giới tính</label>
                                 <div class="form-radio">
                                     <label>
-                                        <input formcontrolname="gender" id="male" name="gender" type="radio" value="1" class="untouched pristine valid">
+                                        <input formcontrolname="gender" id="male" name="gender" type="radio" value="1" class="touched pristine valid">
                                         <span>Nam</span>
                                     </label>
                                     <label>
@@ -285,9 +289,10 @@
     <button class="change-password btnE" style="width:100px; text-align: center" onclick="showForm()">Đổi Email</button>
     <button class="change-password btnP" style="width:100px; text-align: center" onclick="showForm1()">Đổi mật khẩu</button>
     <button style="width:100px; text-align: center" class="change-password btnC" >Hủy</button>
-    <input style="width:100px; text-align: center; " class="change-password btnS" type="submit" value="Lưu" >
+    <button style="width:100px; text-align: center; " class="change-password btnS" type="submit" >Luu</button>
     </div>
     </div>
+
         <script>
             function showForm() {
   var x = document.getElementById("myID");
@@ -316,5 +321,6 @@
                     </script>
             
 </body>
+@endsection('setting')
 </html>
 

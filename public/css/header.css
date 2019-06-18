@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid #DDD;
 }
 .top{
     width: 90%;
@@ -11,7 +11,7 @@
     height: 65px;
     margin-left: 5%;
     padding: 0px;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid #DDD;
 }
 .Logo img{
     float: left;
@@ -29,14 +29,14 @@ list-style: none;
     height: 65px;
     float: left;
     padding: 0;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid #DDD;
 }
 
 .l-r{
     width: 35%;
     height: 65px;
     float: left;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid #DDD;
 }
 .search input{
     float: left;
@@ -85,7 +85,7 @@ background: #1a66a8;
     margin: 0px;
     padding: 0px;
     clear: left;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid #DDD;
 }
 .menubot{
     margin: 0px;
