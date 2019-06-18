@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/headerLG.css')}}"/>
         <meta charset="utf-8"/>
         <title>
-            <img src="https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwia8bHXkcHiAhVB-WEKHQ5RAsAQjRx6BAgBEAQ&url=https%3A%2F%2Fwall.alphacoders.com%2Fby_sub_category.php%3Fid%3D173906%26name%3DSpider-Man%2BWallpapers&psig=AOvVaw03cXL60qNyz0QcqOhm6RRm&ust=1559232993179923" alt=""> Muoi
+            <img src="https://cdn.shopify.com/s/files/1/0257/6087/products/fd50bef9a554e0ac9d6ab82d6187b671.png" alt=""> Muoi
         </title>
     </head>
     <body>
