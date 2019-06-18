@@ -20,6 +20,8 @@ Route::post('register',"RegisterController@postRegister");
 
 //login
 Route::post('logined','AuthController@login')->name('logined');
+//login admin 
+Route::post('admin','AdminController@login')->name('loginedAdmin');
 //
 
 //chi tiet bai viet
@@ -50,6 +52,13 @@ Route::post('cai-dat','SettingController@postSetting')->name('cai-datt');
 
 //Tim-kiem
 Route::post('tim-kiem','MyController@search')->name('tim-kiem');
+
+//post by user
+Route::get('/{user_name}/{id}','MyController@indexByuser')->name('indexByUser');
+
+//post by box 
+Route::get('indexByBox/{id_box}/{name_box}','MyController@indexByBox')->name('indexByBox');
+
 
 Route::get('hello', function() {
     return 'heeloooo';
@@ -158,13 +167,13 @@ Route::get('model/user/all',function(){
 Route::get('delete-member/user/{id}','AdminController@deleteMember');
 
 
-Route::get('admin','AdminController@getAdmin');
+Route::get('admin','AdminController@getAdmin')->name('admin');
 
-Route::get('members','AdminController@getMember');
+Route::get('members','AdminController@getMember')->name('member');
 
-Route::get('qlpost','AdminController@getPosts');
+Route::get('qlpost','AdminController@getPosts')->name('post');
 
-Route::get('qlcmt','AdminController@getCMT');
+Route::get('qlcmt','AdminController@getCMT')->name('cmt');
 
 Route::get('delete-comment/comment/{id}','AdminController@deleteCMT');
 

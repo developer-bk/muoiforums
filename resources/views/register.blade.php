@@ -20,7 +20,7 @@
                 <div class="error">{{ $errors->first('email') }}</div>
             @endif
              <input name="first_name" placeholder="Firstname" type="input" >
-             <input name="las_tname" placeholder="Lastname" type="input" >
+             <input name="last_name" placeholder="Lastname" type="input" >
              <input name="password" placeholder="Password*" type="password" >
              @if ($errors->has('password'))
                 <div class="error">{{ $errors->first('password') }}</div>

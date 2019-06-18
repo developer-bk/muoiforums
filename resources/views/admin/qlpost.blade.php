@@ -102,17 +102,17 @@
           </div>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="{{route('member')}}">
           <i class="fas fa-fw fa-table"></i>
           <span>Quản lí tài khoản</span></a>
       </li>
       <li class="nav-item active">
-          <a class="nav-link" href="qlpost.html">
+          <a class="nav-link" href="{{route('post')}}">
             <i class="fas fa-fw fa-table"></i>
             <span>Quản lí bài viết</span></a>
         </li>
         <li class="nav-item active">
-                <a class="nav-link" href="qlcmt.html">
+                <a class="nav-link" href="{{route('cmt')}}">
                   <i class="fas fa-fw fa-table"></i>
                   <span>Quản lí comment</span></a>
               </li>

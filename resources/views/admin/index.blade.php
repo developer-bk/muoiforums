@@ -102,17 +102,17 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="members">
+        <a class="nav-link" href="{{route('member')}}">
           <i class="fas fa-fw fa-table"></i>
           <span>Quản lí người dùng</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="qlpost">
+          <a class="nav-link" href="{{route('post')}}">
             <i class="fas fa-fw fa-table"></i>
             <span>Quản lí bài viết</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="qlcmt">
+            <a class="nav-link" href="{{route('cmt')}}">
               <i class="fas fa-fw fa-table"></i>
               <span>Quản lí comment</span></a>
           </li>
@@ -209,9 +209,9 @@
                     <td>{{$u -> username}}</td>
                     <td>{{$u -> name_decentralization}}</td>
                     <td>{{$u -> email}}</td>
-                    <td>2011/04/25</td>
+                    <td>{{$u -> birth_day}}</td>
                     <td>{{$u -> number_phone}}</td>
-                    <td>Bách khoa</td>
+                    <td>{{$u -> address}}</td>
                   </tr>
                 @endforeach
                 </tbody>
@@ -220,153 +220,8 @@
           </div>
         </div>
         <div class="card mb-3">
-            <div class="card-header">
-              <i class="fas fa-table"></i>
-              Data Table Example</div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                        <th>Tiêu đề bài viết</th>
-                        <th>Tài khoản đăng</th>
-                        <th>Ngày đăng</th>
-                        <th>Thể loại</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Chị Lệ bị chó cắn</td>
-                      <td>Việt cẩu</td>
-                      <td>06/06/2019</td>
-                      <td>Thể thao</td>
-                    </tr>
-                    <tr>
-                          <td>Chị Lệ bị chó cắn</td>
-                          <td>Việt cẩu</td>
-                          <td>06/06/2019</td>
-                          <td>Thể thao</td>
-                    </tr>
-                    <tr>
-                          <td>Chị Lệ bị chó cắn</td>
-                          <td>Việt cẩu</td>
-                          <td>06/06/2019</td>
-                          <td>Thể thao</td>
-                    </tr>
-                    <tr>
-                          <td>Chị Lệ bị chó cắn</td>
-                          <td>Việt cẩu</td>
-                          <td>06/06/2019</td>
-                          <td>Thể thao</td>
-                    </tr>
-                    <tr>
-                          <td>Chị Lệ bị chó cắn</td>
-                          <td>Việt cẩu</td>
-                          <td>06/06/2019</td>
-                          <td>Thể thao</td>
-                    </tr>
-                    <tr>
-                          <td>Chị Lệ bị chó cắn</td>
-                          <td>Việt cẩu</td>
-                          <td>06/06/2019</td>
-                          <td>Thể thao</td>
-                    </tr>
-                    <tr>
-                          <td>Chị Lệ bị chó cắn</td>
-                          <td>Việt cẩu</td>
-                          <td>06/06/2019</td>
-                          <td>Thể thao</td>
-                    </tr>
-                    <tr>
-                          <td>Chị Lệ bị chó cắn</td>
-                          <td>Việt cẩu</td>
-                          <td>06/06/2019</td>
-                          <td>Thể thao</td>
-                    </tr>
-                    <tr>
-                          <td>Chị Lệ bị chó cắn</td>
-                          <td>Việt cẩu</td>
-                          <td>06/06/2019</td>
-                          <td>Thể thao</td>
-                    </tr>
-                    <tr>
-                          <td>Chị Lệ bị chó cắn</td>
-                          <td>Việt cẩu</td>
-                          <td>06/06/2019</td>
-                          <td>Thể thao</td>
-                    </tr>
-                    <tr>
-                          <td>Chị Lệ bị chó cắn</td>
-                          <td>Việt cẩu</td>
-                          <td>06/06/2019</td>
-                          <td>Thể thao</td>
-                    </tr>
-                    <tr>
-                          <td>Chị Lệ bị chó cắn</td>
-                          <td>Việt cẩu</td>
-                          <td>06/06/2019</td>
-                          <td>Thể thao</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fas fa-table"></i>
-              Quản lí Comment</div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                        <th>Comment</th>
-                        <th>Bài viết</th>
-                        <th>Tài khoản đăng</th>
-                        <th>Thể loại</th>
-                        <th>Thời gian</th>
-                        <th>Sửa thông tin</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Thương chị</td>
-                      <td>Chị Lệ bị chó cắn</td>
-                      <td>Việt cẩu</td>
-                      <td>Thể thao</td>
-                      <td>01/02/2100</td>
-                      <td>
-                              <div><button style="float: left">Sửa thông tin</button>
-                                  <button style="float: left">Xóa tài khoản</button></div>
-                            </td>
-                    </tr>
-                    <tr>
-                          <td>Thương chị</td>
-                          <td>Chị Lệ bị chó cắn</td>
-                          <td>Việt cẩu</td>
-                          <td>Thể thao</td>
-                          <td>01/02/2100</td>
-                          <td>
-                                  <div><button style="float: left">Sửa thông tin</button>
-                                      <button style="float: left">Xóa tài khoản</button></div>
-                                </td>
-                        </tr>
-                        <tr>
-                              <td>Thương chị</td>
-                              <td>Chị Lệ bị chó cắn</td>
-                              <td>Việt cẩu</td>
-                              <td>Thể thao</td>
-                              <td>01/02/2100</td>
-                              <td>
-                                      <div><button style="float: left">Sửa thông tin</button>
-                                          <button style="float: left">Xóa tài khoản</button></div>
-                                    </td>
-                            </tr>
-                   
-                  </tbody>
-                </table>
-              </div>
+           
+         
             </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>

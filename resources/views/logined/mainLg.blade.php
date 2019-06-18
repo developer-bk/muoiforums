@@ -49,21 +49,20 @@
                                 <div class="row" >
                                     <div class="UserPost">
                                         
-                                            <a class="avatar" href="/nguoi-dung/ThanhLuongTra"><img src="{{ Session::get('user')->avatar}}" alt="avatar" class=""></a>
+                                            <a class="avatar" href="{{route('indexByUser',[$po->username,$po->id])}}"><img src="{{$po->avatar}}" alt="avatar" class=""></a>
                                             <div>
                                             <hover-profile><span class="hover-username">
                         
-                                            <a class="username" href="/nguoi-dung/ThanhLuongTra" style="font-size: 20px">
+                                            <a class="username" href="{{route('indexByUser',[$po->username,$po->id])}}" style="font-size: 20px">
                                             {{$po->username}}
                                             </a>
                                             </span></hover-profile>
                                                     trong
-                                                    <a class="category-name" href="/s/truyen-cam-hung/hot">{{$po->name_box}}</a>
+                                                    <a class="category-name" href="{{route('indexByBox',[$po->id_box,$po->name_box])}}">{{$po->name_box}}</a>
                                             </div>
                                             <div class="created">
                                                 
                                                     <span class="date">{{$po->created_at}}</span>
-                                                    <!----><span> &nbsp; · &nbsp; 5 phút đọc</span>
                                             </div>
                                         
                                     </div>
@@ -72,7 +71,7 @@
                                     <div class="col-md-3">
                                         <a href="login.html">
                                             <br>
-                                                <img width="200px" height="200px" class="img-responsive" src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.0-9/58381907_1662923087185411_5549577301005434880_n.jpg?_nc_cat=103&_nc_oc=AQkHova275fIAdDYOYyt3VAdgdeNORQCv2l6ZMENzKxyRx03iSv0OH_KyvwxrvWN7po&_nc_ht=scontent.fhan2-1.fna&oh=c7b1f98800a6540ba0eaaf604bd2e60a&oe=5D9F63FD" alt="ấdsd">
+                                                <img width="200px" height="200px" class="img-responsive" src="{{$po->image}}" alt="ấdsd">
                                         </a>
                                     </div>
                                     <div class="col-md-9">

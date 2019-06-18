@@ -93,6 +93,56 @@ class MyController extends Controller
         
     }
 
+    public function indexByUser(Request $request) {
+
+        $user_id = $request['id'];
+
+        $post=DB::table('post')
+        ->where('user_created_id','=',$user_id)
+        ->join('users', 'post.user_created_id','=','users.id')
+        ->join('box','post.box_id','=','box.id_box')
+        ->select(
+            'post.*',
+            'users.id',
+            'users.username',
+            'users.avatar',
+            'box.id_box',
+            'box.name_box')
+            ->orderBy('post.updated_at','desc')
+            ->get()  ;
+        
+            if (Session::has('user')) {
+                return View::make('logined.mainLg',compact('post'));
+            } else {
+                return View::make('main',compact('post'));
+            }
+    }
+
+    public function indexByBox(Request $request) 
+    {
+        $id_box = $request['id_box'];
+
+        $post=DB::table('post')
+        ->where('box_id','=',$id_box)
+        ->join('users', 'post.user_created_id','=','users.id')
+        ->join('box','post.box_id','=','box.id_box')
+        ->select(
+            'post.*',
+            'users.id',
+            'users.username',
+            'users.avatar',
+            'box.id_box',
+            'box.name_box')
+            ->orderBy('post.updated_at','desc')
+            ->get()  ;
+        
+            if (Session::has('user')) {
+                return View::make('logined.mainLg',compact('post'));
+            } else {
+                return View::make('main',compact('post'));
+            }
+    }
+
     public function postDetail(Request $request)
     {
         $id_post=$request['id_post'];

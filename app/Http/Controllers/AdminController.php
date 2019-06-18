@@ -24,11 +24,20 @@ class AdminController extends Controller
     public function __invoke(Request $request)
     {
         //
+       
     }
 
-    public function getAdmin(){
-        
-            $user=DB::table('users')
+    public function login(Request $request) {
+        $username = $request['username'];
+        $password = $request['password'];
+
+        if (Auth::attempt(['username'=>$username,'password'=>$password]))
+        {
+            $user=Auth::user();
+            Session::put('user',$user);
+            $id_decentralization = Session::get('user')->id_decentralization;
+            if ($id_decentralization == 0) {
+                $user=DB::table('users')
                 ->join('decentralization','users.id_decentralization','=','decentralization.id_decentralization')
                 ->select(
                     'users.*',
@@ -37,7 +46,40 @@ class AdminController extends Controller
                     'users.email',
                     'users.number_phone',
                     'decentralization.name_decentralization')->get();
-                    return View::make('admin/index',compact('user'));
+                return View::make('admin/index',compact('user'));
+            } else {
+                echo('Ban ko co quyen, vi ban deo xung dang');
+            }
+           
+        }
+        
+            else {
+                return back()->withInput()->with('error','Tài khoản hoặc mất khẩu chưa đúng');
+            }
+    }
+
+    public function getAdmin(){
+        
+        if (Session::has('user')) {
+            $id_decentralization = Session::get('user')->id_decentralization;
+            if ($id_decentralization == 0) {
+                $user=DB::table('users')
+                ->join('decentralization','users.id_decentralization','=','decentralization.id_decentralization')
+                ->select(
+                    'users.*',
+                    'users.id',
+                    'users.username',
+                    'users.email',
+                    'users.number_phone',
+                    'decentralization.name_decentralization')->get();
+                return View::make('admin/index',compact('user'));
+            } else {
+                echo('Ban ko co quyen, vi ban deo xung dang');
+            }
+        } else {
+            return View::make('admin.loginAdmin');
+        }
+           
     }
 
     public function getMember(){

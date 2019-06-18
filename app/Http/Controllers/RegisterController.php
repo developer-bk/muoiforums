@@ -44,6 +44,7 @@ class RegisterController extends Controller
             $user->last_name=$request->last_name;
             $user->id_decentralization=3;
             $user->id_status=0;
+            $user->avatar="http://chittagongit.com/images/user-account-icon/user-account-icon-13.jpg";
             $user->save();
             $success='Registered successfully, please login...!';
             return Redirect::route('login')->with( ['success' => $success] );

@@ -21,34 +21,7 @@
                 <h1 class="page-header">Viết bài
                     </h1>
                 </div>
-    <div class="main">
-        <div class="form-group" >
-        <label>Chọn danh mục</label>
-                </div>
-             
-        <div class="col-md-3 form-group">
-            <select class="Option" id="singleSelectTextDDJS" >
-                <option value="100"></option>
-                <option value="0">Quan điểm - Tranh luận</option>
-                <option value="1">Truyền cảm hứng</option>
-                <option value="2">Khoa học - Công nghệ</option>
-                <option value="3">Science2vn</option>
-                <option value="4">Thể thao</option>
-                <option value="5">Game</option>
-                <option value="6">Sự kiện Spiderum</option>
-                <option value="7">Otakulture</option>
-                <option value="8">Sáng tác</option>
-                <option value="9">Comics</option>
-                <option value="10">Phim</option>
-                <option value="11">Sách</option>
-                <option value="12">Du lịch - Ẩm thực</option>
-                <option value="13">Kỹ năng</option>
-                <option value="14">Âm nhạc</option>
-                <option value="15">English Zone</option>
-                <option value="16">Chuyện trò - Tâm sự</option>
-            </select>
-        </div>
-            </div>
+   
         </div>
     </div>
                         </div>
@@ -58,14 +31,25 @@
             <div class="main">
             <div class="container" style="padding-bottom:120px">
             <form action="{{route('viet-bai')}}" method="POST">
+            <div class="form-group" >
+        <label>Chọn danh mục</label>
+                </div>
+             
+        <div class="col-md-3 form-group">
+            <select class="Option" id="singleSelectTextDDJS" name="box">
+                <option value="100"></option>
+                
+                @foreach ($box as $b)
+                <option value="{{$b->id_box}}">{{$b->name_box}}</option>
+                @endforeach
+            </select>
+        </div>
             {{ csrf_field() }} 
                             <div class="form-group">
                                 <label>Tiêu đề</label>
-                                <input class="form-control" name="txtName" placeholder="Tiêu đề bài viết" />
+                                <input class="form-control" name="subject" placeholder="Tiêu đề bài viết" />
                             </div>
-                            <div class="form-group">
-                                <input class="form-control" name="txtPrice" placeholder="Tóm tắt nội dung" />
-                            </div>
+                            
                             <div class="form-group">
                                 <label>Nội dung</label>
                                 <textarea id="editor1" name="editor1" cols="80" rows="10">
