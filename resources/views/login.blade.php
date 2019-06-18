@@ -11,7 +11,7 @@
         
         <form action="{{route('logined')}}" method="POST">
         {{ csrf_field() }} 
-        <a href="{{route('home')}}"><img src="https://img.icons8.com/wired/2x/search.png" alt="" height="50px" height="50px"> </a>
+        <a href="{{route('home')}}"><img src="https://cdn2.iconfinder.com/data/icons/bright-food-products/512/salt-512.png" alt="" height="50px" height="50px"> </a>
                        <h1>Login</h1> 
                        @include('error.note')
                        <div class="notifications" id="successMessage">{{ Session::get('success') }}</div>
