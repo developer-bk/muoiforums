@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/headerLG.css')}}"/>
         <meta charset="utf-8"/>
         <title>
-            <img src="https://cdn.shopify.com/s/files/1/0257/6087/products/fd50bef9a554e0ac9d6ab82d6187b671.png" alt=""> Muoi
+             Muoi
         </title>
     </head>
     <body>

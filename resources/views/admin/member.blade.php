@@ -26,7 +26,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" style="color: aliceblue">Admin</a>
+    <a class="navbar-brand mr-1" style="color: aliceblue" href="{{route('admin')}}">Admin</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -89,22 +89,11 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Đăng nhập</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <h6 class="dropdown-header">Login Screens:</h6>
-            <a class="dropdown-item" href="login.html">Đăng nhập</a>
-            <a class="dropdown-item" href="register.html">Đăng xuất</a>
-            <div class="dropdown-divider"></div>
-          </div>
-      </li>
+      
       <li class="nav-item active">
         <a class="nav-link" href="{{route('member')}}">
           <i class="fas fa-fw fa-table"></i>
-          <span>Quản lí tài khoản</span></a>
+          <span>Quản lí người dùng</span></a>
       </li>
       <li class="nav-item active">
           <a class="nav-link" href="{{route('post')}}">
@@ -151,15 +140,17 @@
                 <tbody>
                 @foreach ($user as $u)
                   <tr>
-                    <td>{{$u -> username}}</td>
+                    <td>{{$u -> name_decentralization}}</td>
                     <td>{{$u -> username}}</td>
                     <td>{{$u -> email}}</td>
-                    <td>2011/04/25</td>
+                    <td>{{$u -> birth_day}}</td>
                     <td>{{$u -> number_phone}}</td>
-                    <td>Bách khoa</td>
+                    <td>{{$u -> address}}</td>
                     <td>
-                      <div><a href="/delete-member/user/{{$u -> id}}" style="float: left">Sửa thông tin</a>
-                          <a href="/delete-member/user/{{$u -> id}}" style="float: left">Xóa tài khoản</a ></div>
+                    
+                      <div><a href="{{route('setAdmin',$u->id)}}" style="float: left">Set Admin</a></div>
+                    
+                       <div>   <a href="/delete-member/user/{{$u -> id}}" style="float: left">Xóa tài khoản</a ></div>
                     </td>
                   </tr>
                   @endforeach

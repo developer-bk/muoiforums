@@ -26,7 +26,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" style="color: aliceblue">Admin</a>
+    <a class="navbar-brand mr-1" style="color: aliceblue" href="{{route('admin')}}">Admin</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -89,18 +89,7 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Đăng nhập</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Đăng nhập</a>
-          <a class="dropdown-item" href="register.html">Đăng xuất</a>
-          <div class="dropdown-divider"></div>
-        </div>
-      </li>
+      
       <li class="nav-item">
         <a class="nav-link" href="{{route('member')}}">
           <i class="fas fa-fw fa-table"></i>
@@ -125,9 +114,9 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+            <a href="#">MuoiRoom</a>
           </li>
-          <li class="breadcrumb-item active">Overview</li>
+          <li class="breadcrumb-item active">Room mặn nhất thế giới</li>
         </ol>
 
         <!-- Icon Cards-->
@@ -170,7 +159,7 @@
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-shopping-cart"></i>
                 </div>
-                <div class="mr-5">13 comment</div>
+                <div class="mr-5">Tất cả các comment</div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
                 <span class="float-left">Xem chi tiết</span>
@@ -187,13 +176,12 @@
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Data Table Example</div>
+            Quản lí người dùng</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Tài khoản </th>
                     <th>Tên người dùng</th>
                     <th>Loại tài khoản</th>
                     <th>Email</th>
@@ -205,7 +193,6 @@
                 <tbody>
                    @foreach ($user as $u)
                   <tr>
-                    <td>{{$u->name_decentralization}}</td>
                     <td>{{$u -> username}}</td>
                     <td>{{$u -> name_decentralization}}</td>
                     <td>{{$u -> email}}</td>
@@ -219,14 +206,80 @@
             </div>
           </div>
         </div>
-        <div class="card mb-3">
-           
-         
+       ///////////
+       <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            Quản lí người dùng</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Tên người dùng</th>
+                    <th>Loại tài khoản</th>
+                    <th>Email</th>
+                    <th>Ngày sinh</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ liên lạc</th>
+                  </tr>
+                </thead>
+                <tbody>
+                   @foreach ($user as $u)
+                  <tr>
+                    <td>{{$u -> username}}</td>
+                    <td>{{$u -> name_decentralization}}</td>
+                    <td>{{$u -> email}}</td>
+                    <td>{{$u -> birth_day}}</td>
+                    <td>{{$u -> number_phone}}</td>
+                    <td>{{$u -> address}}</td>
+                  </tr>
+                @endforeach
+                </tbody>
+              </table>
             </div>
+          </div>
+        </div>
+        /////
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            Quản lí người dùng</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Tên người dùng</th>
+                    <th>Loại tài khoản</th>
+                    <th>Email</th>
+                    <th>Ngày sinh</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ liên lạc</th>
+                  </tr>
+                </thead>
+                <tbody>
+                   @foreach ($user as $u)
+                  <tr>
+                    <td>{{$u -> username}}</td>
+                    <td>{{$u -> name_decentralization}}</td>
+                    <td>{{$u -> email}}</td>
+                    <td>{{$u -> birth_day}}</td>
+                    <td>{{$u -> number_phone}}</td>
+                    <td>{{$u -> address}}</td>
+                  </tr>
+                @endforeach
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
 
       </div>
+
+      
       <!-- /.container-fluid -->
 
       <!-- Sticky Footer -->

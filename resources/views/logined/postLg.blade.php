@@ -31,6 +31,7 @@
             <div class="main">
             <div class="container" style="padding-bottom:120px">
             <form action="{{route('viet-bai')}}" method="POST">
+            <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
             <div class="form-group" >
         <label>Chọn danh mục</label>
                 </div>

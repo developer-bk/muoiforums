@@ -96,10 +96,16 @@ class AdminController extends Controller
     }
 
     public function deleteMember($id){
+
+        $comment = DB::table('comment')
+        ->where('user_id','=',$id) ->delete();
+        
+        $post = DB::table('post')
+        ->where('user_created_id','=',$id) ->delete();
+
         $user = DB::table('users')
-        ->join('comment','users.id','=','comment.user_id')->delete()
         ->where('id', '=', $id)->delete();
-         return View::make('admin/member',compact('user'))->with('user', $user);
+         return redirect()->route('admin');
     }
 
     public function getPosts(){
@@ -169,5 +175,10 @@ class AdminController extends Controller
                         'content'=>$request->editor1
                     ]);
          return redirect('/qlpost');
+    }
+
+    public function setAdmin($id) {
+        DB::update('update users set id_decentralization=? where id = ?',[0,$id]);
+        return redirect()->route('admin');
     }
 }

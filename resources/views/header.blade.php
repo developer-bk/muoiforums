@@ -12,7 +12,7 @@
     <div class="Header">
         <div class="top">
             <div class="Logo">
-                <a href="/muoiRoom/public/">
+                <a href="{{route('home')}}">
                 <img src="icon.png" height="50" width="50">
                 <ul>
                     <li>MUOIROOM</li>

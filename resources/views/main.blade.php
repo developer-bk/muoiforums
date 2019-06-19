@@ -57,7 +57,7 @@
                                             </a>
                                             </span></hover-profile>
                                                     trong
-                                                    <a class="category-name" href="/s/truyen-cam-hung/hot">{{$po->name_box}}</a>
+                                                    <a class="category-name" href="{{route('indexByBox',[$po->id_box,$po->name_box])}}">{{$po->name_box}}</a>
                                             </div>
                                             <div class="created">
                                                 
