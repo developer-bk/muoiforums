@@ -12,7 +12,7 @@
         <div class="top">
             <div class="Logo" >
                 <a href="{{route('home')}}">
-                <img src="icon.png" height="50" width="50">
+                <img src="https://cdn2.iconfinder.com/data/icons/bright-food-products/512/salt-512.png" height="50" width="50">
                 <ul>
                     <li>MUOIROOM</li>
                 </ul>
@@ -63,7 +63,7 @@
                             <a href="">Sách</a>
                         </li>
                         <li>
-                            <a href="">Danh mục khác</a>
+                            <a href="{{route('danhmuc')}}">Danh mục khác</a>
                         </li>
                     </ul>
             </div>
@@ -96,5 +96,6 @@
 @yield('postLg')
 @yield('baivietLg')
 @yield('setting')
+@yield('danhmuc')
 </html>
 

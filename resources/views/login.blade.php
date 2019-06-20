@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>Login</title>
+        <title>Đăng nhập</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/LOGIN.css') }}"/>
     </head>
     
@@ -15,16 +15,16 @@
                        <h1>Login</h1> 
                        @include('error.note')
                        <div class="notifications" id="successMessage">{{ Session::get('success') }}</div>
-                        <input placeholder="Username" type="text" required="" name="username" value="{{old('username')}}">
-                        <input placeholder="Password" type="password" required="" name="password">
+                        <input placeholder="Tên đăng nhập" type="text" required="" name="username" value="{{old('username')}}">
+                        <input placeholder="Mật khẩu" type="password" required="" name="password">
                         <a href="" >
-                            <button type="submit">Login</button>
+                            <button type="submit">Đăng nhập</button>
                             </a>
                             <div class="forgotusername">
-                            <a href="" margin-left="20px" class="link">Forgot username</a> . <a href="" class="link">Forgot Password</a>
+                            <a href="" margin-left="20px" class="link">Quên mật khẩu</a> . <a href="" class="link">Quên mật khẩu</a>
                             </div>
                         <br>
-                        <p class="notifications">New to Forums <a href="{{route('register')}}" class="link">Sign up</a></p>
+                        <p class="notifications">Lần đầu đến forums <a href="{{route('register')}}" class="link">Đăng ký</a></p>
                         <!-- <button onclick="location.href='{{url('/register')}}'" type="button">Register</button> -->
                             
         </form>

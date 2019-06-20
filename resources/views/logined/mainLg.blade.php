@@ -25,12 +25,13 @@
                     <li href="#" class="list-group-item menu1 active">
                         Menu
                     </li>
-                    <li href="#" class="list-group-item menu1">
+                    <a href="{{route('hot')}}"> <li href="{{route('hot')}}" class="list-group-item menu1">
                         Đang Hot
-                    </li>
-                    <li href="#" class="list-group-item menu1">
-                            Mới nhất
-                    </li>
+                    </li></a>
+                    
+                    <a href="{{route('newest')}}"> <li href="{{route('newest')}}" class="list-group-item menu1">
+                        Mới nhất
+                    </li></a>
                     <li href="#" class="list-group-item menu1">
                             Sôi nổi
                     </li>
@@ -62,7 +63,8 @@
                                             </div>
                                             <div class="created">
                                                 
-                                                    <span class="date">{{$po->created_at}}</span>
+                                                    <span class="date">{{$po->created_at}} </span>
+                                                    <span> {{$po->count_view}} lượt xem</span>
                                             </div>
                                         
                                     </div>
@@ -122,6 +124,8 @@
 
             
     </div>
+    @include('footer')
+
 </div>
 
 </body>

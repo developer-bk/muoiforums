@@ -33,7 +33,7 @@
                 </p>
 
                 <!-- Preview Image -->
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <img class="img-responsive" src="{{$po->image}}" alt="">
 
                 <!-- Date/Time -->
                 <p><span class="glyphicon glyphicon-time"></span> Posted on {{$po->created_at}}</p>

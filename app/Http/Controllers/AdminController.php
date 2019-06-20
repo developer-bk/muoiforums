@@ -48,7 +48,7 @@ class AdminController extends Controller
                     'decentralization.name_decentralization')->get();
                 return View::make('admin/index',compact('user'));
             } else {
-                echo('Ban ko co quyen, vi ban deo xung dang');
+                echo('Bạn không có quyền truy cập vào trang này');
             }
            
         }
@@ -74,7 +74,7 @@ class AdminController extends Controller
                     'decentralization.name_decentralization')->get();
                 return View::make('admin/index',compact('user'));
             } else {
-                echo('Ban ko co quyen, vi ban deo xung dang');
+                echo('Bạn không có quyền truy cập vào trang này');
             }
         } else {
             return View::make('admin.loginAdmin');

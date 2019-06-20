@@ -65,11 +65,7 @@ class MyController extends Controller
    
     public function index()
     {
-        if (Session::has('user'))
-        {
-            // echo Session::get('user');
-        }
-           
+        
         
         
             $post=DB::table('post')
@@ -91,6 +87,50 @@ class MyController extends Controller
                         return View::make('main',compact('post'));
                     }
         
+    }
+    public function postHot()
+    {
+            $post=DB::table('post')
+                ->join('users', 'post.user_created_id','=','users.id')
+                ->join('box','post.box_id','=','box.id_box')
+                ->select(
+                    'post.*',
+                    'users.id',
+                    'users.username',
+                    'users.avatar',
+                    'box.id_box',
+                    'box.name_box')
+                    ->orderBy('post.count_view','desc')
+                    ->paginate(10)  ;
+                
+                    if (Session::has('user')) {
+                        return View::make('logined.mainLg',compact('post'));
+                    } else {
+                        return View::make('main',compact('post'));
+                    }
+        
+    }
+
+    public function newest()
+    {
+        $post=DB::table('post')
+        ->join('users', 'post.user_created_id','=','users.id')
+        ->join('box','post.box_id','=','box.id_box')
+        ->select(
+            'post.*',
+            'users.id',
+            'users.username',
+            'users.avatar',
+            'box.id_box',
+            'box.name_box')
+            ->orderBy('post.created_at','desc')
+            ->paginate(10)  ;
+        
+            if (Session::has('user')) {
+                return View::make('logined.mainLg',compact('post'));
+            } else {
+                return View::make('main',compact('post'));
+            }
     }
 
     public function indexByUser(Request $request) {
@@ -168,6 +208,14 @@ class MyController extends Controller
             'users.*'
         )
         ->get();
+        $count= DB::table('post')
+        ->where('id_post','=',$id_post)
+        ->select(
+            'post.count_view'
+        )->pluck ('count_view');
+        // (int)$count = (int)$count+1;
+        (int)$count_view = (int)$count[0] + 1;
+        DB::update('update post set count_view=? where id_post = ?',[$count_view,$id_post]);
         if (Session::has('user')) {
             return View::make('logined.baivietLg',compact('post','comment'));
         } else {
@@ -198,6 +246,11 @@ class MyController extends Controller
         } else {
             return View::make('main',compact('post'));
         }
+    }
+
+    public function getDanhMuc()
+    {
+        return View('danhmuc');
     }
     
 }

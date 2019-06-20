@@ -34,6 +34,9 @@ Route::get("loginedddd/header", function(){
 
 
 Route::get('/', 'MyController@index')->name('home'); 
+Route::get('dang-hot','MyController@postHot')->name('hot');
+Route::get('moi-nhat','MyController@newest')->name('newest');
+
 //Viet bai
 Route::get('viet-bai', 'PostController@getPost')->name('viet-bai');
 Route::post('viet-bai','PostController@post');
@@ -49,6 +52,9 @@ Route::post('comment/{id_post}','CommentController@postComment')->name('comment'
 //ài đặt tài khoản 
 Route::get('cai-dat/{username}','SettingController@getSetting')->name('cai-dat');
 Route::post('cai-dat','SettingController@postSetting')->name('cai-datt');
+
+//danh muc
+Route::get('danhmuct','MyController@getDanhMuc')->name('danhmuc');
 
 //Tim-kiem
 Route::post('tim-kiem','MyController@search')->name('tim-kiem');

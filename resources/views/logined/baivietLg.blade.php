@@ -33,7 +33,7 @@
                 </p>
 
                 <!-- Preview Image -->
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <img class="img-responsive" src="{{$po->image}}" alt="">
 
                 <!-- Date/Time -->
                 <p><span class="glyphicon glyphicon-time"></span> Posted on {{$po->created_at}}</p>
@@ -66,7 +66,7 @@
                 <!-- Comment -->
                 <div class="media">
                     <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="" width="40px" height="40px">
+                        <img class="media-object" src="{{$co->avatar}}" alt="" width="40px" height="40px">
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">{{$co->username}}
@@ -84,6 +84,7 @@
 
         </div>
         </div>
+        
 </body>
 
 </html>

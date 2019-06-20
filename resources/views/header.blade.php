@@ -13,7 +13,7 @@
         <div class="top">
             <div class="Logo">
                 <a href="{{route('home')}}">
-                <img src="icon.png" height="50" width="50">
+                <img src="https://cdn2.iconfinder.com/data/icons/bright-food-products/512/salt-512.png" height="50" width="50">
                 <ul>
                     <li>MUOIROOM</li>
                 </ul>

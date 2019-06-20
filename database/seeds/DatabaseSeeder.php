@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
             'user_created_id'=>6,
             'box_id'=>2
         ]);
+
+
+
     }
 }
